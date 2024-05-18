@@ -91,7 +91,7 @@ export function fetchBooking({ commit }) {
  *        }
  */
 export function createBooking(
-  { commit },
+  // { commit },
   { paymentToken, outboundFlight, inboundFlight }
 ) {
   const processPayment = () => {
