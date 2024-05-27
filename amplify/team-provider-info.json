@@ -31,6 +31,9 @@
     "categories": {
       "auth": {
         "serverlessaairlineauth": {}
+      },
+      "api": {
+        "awsserverlessairline": {}
       }
     }
   }
