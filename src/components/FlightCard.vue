@@ -32,41 +32,6 @@
               </div>
             </div>
             <div
-              class="row text-primary flight__timing"
-              v-if="
-                !booking &&
-                  details.departureTime &&
-                  details.flightDuration &&
-                  details.arrivalTime
-              "
-            >
-              <q-card-separator class="flight__separator" />
-              <div class="col flight__left-details">
-                <div class="row inline">
-                  <q-icon class="flight__icon-caption" name="flight_takeoff" />
-                  <div class="q-ml-sm q-body-1 text-bold q-pt-xs">
-                    {{ details.departureTime }}
-                  </div>
-                </div>
-              </div>
-              <div class="col flight__center-details text-center">
-                <div class="row inline">
-                  <q-icon class="flight__icon-caption" name="access_time" />
-                  <div class="q-ml-sm q-caption text-bold q-pt-xs">
-                    {{ details.flightDuration }}
-                  </div>
-                </div>
-              </div>
-              <div class="col flight__right-details text-right">
-                <div class="row inline">
-                  <q-icon class="flight__icon-caption" name="flight_land" />
-                  <div class="q-ml-sm q-caption text-bold q-pt-xs">
-                    {{ details.arrivalTime }}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
               class="row flight__ticket"
               v-if="!booking && details.ticketPrice && details.flightNumber"
             >
