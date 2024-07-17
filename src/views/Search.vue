@@ -54,7 +54,7 @@
         <q-datetime
           v-model="departureDate"
           type="date"
-          format="ddd, DD MMM YYYY"
+          format="YYYY MMM DD"
           stack-label="Pick a date"
           :min="new Date()"
         />
@@ -157,7 +157,7 @@ export default {
       this.$router.push({
         name: "searchResults",
         query: {
-          date: date.formatDate(this.departureDate, "DD-MM-YYYY"),
+          date: date.formatDate(this.departureDate, "YYYY-MM-DD"),
           departure: this.departureCity,
           arrival: this.arrivalCity
         }

@@ -39,7 +39,13 @@ export function fetchFlights({ commit }, { date, departure, arrival }) {
     commit("SET_LOADER", true);
     try {
       // const { data: flightData } = await axios.get("/mocks/flights.json");
-      const {data: {listFlights: {items: flightData}}} = await API.graphql(graphqlOperation(listFlights));
+      //flightsFIlter
+      const flightsFilter = {filter :{
+        departureDate: { beginsWith : date },
+         departureAirportCode: { eq: departure },
+        arrivalAirportCode: { eq: arrival } 
+     }}; 
+      const {data: {listFlights: {items: flightData}}} = await API.graphql(graphqlOperation(listFlights, flightsFilter));
       console.log('flightsDataApi', flightData);
       const flights = flightData.map(flight => new Flight(flight));
       commit("SET_FLIGHTS", flights);
